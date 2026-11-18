@@ -1,0 +1,7 @@
+base   pagepreview
+author Benoit
+email  benoit.thibaudeau64@gmail.com
+date   2026-11-17
+name   Pagepreview (aperçu au survol)
+desc   Au survol d'un lien vers une autre page, affiche le haut de cette page dans une carte flottante (comme Obsidian). Une icône à double flèche en haut à droite de la carte ouvre la page.
+url    https://www.dokuwiki.org/plugins

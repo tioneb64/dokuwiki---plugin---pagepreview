@@ -1,0 +1,81 @@
+/* Pagepreview : carte flottante d'aperçu */
+
+.plugin_pagepreview {
+    position: fixed;
+    z-index: 2000;
+    width: 30em;
+    max-width: calc(100vw - 16px);
+    background: __background__;
+    color: __text__;
+    border: 1px solid __border__;
+    border-radius: 8px;
+    box-shadow: 0 6px 24px rgba(0, 0, 0, .22);
+    overflow: hidden;
+    font-size: .9em;
+    line-height: 1.45;
+}
+
+.plugin_pagepreview .pp-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: .6em;
+    padding: .4em .7em;
+    background: __background_alt__;
+    border-bottom: 1px solid __border__;
+}
+.plugin_pagepreview .pp-title {
+    font-weight: 700;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.plugin_pagepreview a.pp-open {
+    flex: none;
+    display: inline-flex;
+    padding: .2em;
+    border-radius: 4px;
+    color: __text_neu__;
+    text-decoration: none;
+}
+.plugin_pagepreview a.pp-open:hover { background: __link__; color: #fff; }
+
+.plugin_pagepreview .pp-body {
+    position: relative;
+    max-height: 17em;
+    overflow: hidden;
+    padding: .2em .9em .6em;
+}
+/* fondu en bas : l'aperçu n'est que le haut de la page */
+.plugin_pagepreview .pp-body::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 3em;
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0), __background__);
+    pointer-events: none;
+}
+
+.plugin_pagepreview h1 { font-size: 1.35em; margin: .5em 0 .3em; }
+.plugin_pagepreview h2 { font-size: 1.2em; margin: .6em 0 .3em; }
+.plugin_pagepreview h3, .plugin_pagepreview h4, .plugin_pagepreview h5 { font-size: 1.05em; margin: .5em 0 .25em; }
+.plugin_pagepreview p, .plugin_pagepreview ul, .plugin_pagepreview ol { margin: .3em 0; }
+.plugin_pagepreview .secedit, .plugin_pagepreview .toc, .plugin_pagepreview #dw__toc { display: none; }
+.plugin_pagepreview img { max-width: 100%; height: auto; }
+.plugin_pagepreview table { font-size: .9em; }
+
+/* encadrés Obsidian (> [!info] Titre) */
+.plugin_pagepreview blockquote.pp-callout {
+    margin: .4em 0;
+    padding: .3em .8em .4em;
+    border: 0;
+    border-left: 4px solid __link__;
+    background: __background_alt__;
+    font-style: normal;
+}
+.plugin_pagepreview blockquote.pp-callout .pp-callout-title { display: block; }
+.plugin_pagepreview blockquote.pp-warning, .plugin_pagepreview blockquote.pp-caution { border-left-color: #c77700; }
+.plugin_pagepreview blockquote.pp-danger, .plugin_pagepreview blockquote.pp-error, .plugin_pagepreview blockquote.pp-bug { border-left-color: #b3261e; }
+.plugin_pagepreview blockquote.pp-success, .plugin_pagepreview blockquote.pp-check { border-left-color: #2e7d32; }
